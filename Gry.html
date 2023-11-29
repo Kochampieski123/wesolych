@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gry</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Verdana';
+            background: url('tlo.png') center/cover fixed no-repeat;
+            color: #fff; /* Kolor tekstu */
+            text-align: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav {
+            text-align: center;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            background: #fff; 
+        }
+
+        nav a:hover {
+            background: #ddd; 
+        }
+        p {
+            font-size: x-large;
+           
+        }
+        #quiz-container {
+          
+            padding: 20px;
+            border-radius: 8px;
+           
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+        }
+
+        .option {
+            padding: 10px;
+            background-color: #d35d5d;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .option:hover {
+            background-color: #bb6767;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="Główna.html"><img src="ws.png" alt="Wesołych Świąt"></a>
+    </header>
+
+    <nav>
+        <a href="Kolędy.html">Kolędy</a>
+        <a href="Galeria.html">Galeria</a>
+        <a href="Gry.html">Gry</a>
+        <a href="Przepisy.html">Przepisy</a>
+        <a href="Kontakt.html">Kontakt</a>
+    </nav>
+
+    <div id="quiz-container">
+        <div class="question">Kto nosi czerwony strój i daje prezenty w Wigilię?</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this)">Święty Mikołaj</div>
+            <div class="option" onclick="checkAnswer(this)">Zajączek wielkanocny</div>
+            <div class="option" onclick="checkAnswer(this)">Fikumiku</div>
+            <div class="option" onclick="checkAnswer(this)">Smerfetka</div>
+        </div>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkAnswer(selectedOption) {
+            const correctAnswer = "Święty Mikołaj";
+            const userAnswer = selectedOption.textContent;
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById('result').textContent = 'Poprawna odpowiedź!';
+            } else {
+                document.getElementById('result').textContent = 'Nieprawidłowa odpowiedź. Spróbuj ponownie.';
+            }
+        }
+    </script>
+    
+</body>
+</html>
